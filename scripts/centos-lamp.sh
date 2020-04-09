@@ -32,6 +32,6 @@ mysql -u root -e "SHOW DATABASES";
 # Download Starter content
 cd /vagrant
 sudo -u vagrant wget -q https://raw.githubusercontent.com/afeets/centos65-lamp/master/files/index.html
-sudo -u vagrant wget -q https://raw.githubusercontent.com/afeets/centos65-lamp/master/files/info.html
+sudo -u vagrant wget -q https://raw.githubusercontent.com/afeets/centos65-lamp/master/files/info.php
 
 service httpd restart
