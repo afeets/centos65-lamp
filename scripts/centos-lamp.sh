@@ -1,12 +1,12 @@
 #!/bin/bash
 
-sudo yum update -y --exclude=kernel
+yum update -y --exclude=kernel
 
 # tools
-sudo yum install -y nano git unzip screen
+yum install -y nano git unzip screen
 
 # apache2
-sudo yum install -y httpd httpd-devel httpd-tools
+yum install -y httpd httpd-devel httpd-tools
 chkconfig --add httpd
 chkconfig httpd on
 service httpd stop
@@ -18,10 +18,10 @@ ln -s /vagrant /var/www/html
 service httpd start
 
 # php
-sudo yum install -y php php-cli php-common php-devel php-mysql
+yum install -y php php-cli php-common php-devel php-mysql
 
 # mysql
-sudo yum install -y mysql mysql-server mysql-devel
+yum install -y mysql mysql-server mysql-devel
 chkconfig --add mysqld
 chkconfig mysqld on
 
