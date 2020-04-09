@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 yum update -y --exclude=kernel
+
+# tools
 yum install -y nano git unzip screen
 
 # apache2
@@ -28,5 +30,8 @@ service mysqld start
 mysql -u root -e "SHOW DATABASES";
 
 # Download Starter content
+cd /vagrant
+sudo -u vagrant wget -q https://raw.githubusercontent.com/afeets/vagrant/master/files/index.html
+sudo -u vagrant wget -q https://raw.githubusercontent.com/afeets/vagrant/master/files/info.php
 
 service httpd restart
