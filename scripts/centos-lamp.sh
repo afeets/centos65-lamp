@@ -26,6 +26,9 @@ yum-config-manager --enable remi-php56
 # php
 yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 
+sudo -u vagrant wget -q https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+rpm -Uvh mysql80-community-release-el7-1.noarch.rpm
+
 # mysql
 yum install -y mysql mysql-server mysql-devel
 chkconfig --add mysqld
