@@ -3,7 +3,7 @@
 yum update -y --exclude=kernel
 
 # tools
-yum install -y nano git unzip screen
+yum install -y nano git unzip screen yum-utils
 
 # apache2
 yum install -y httpd httpd-devel httpd-tools
@@ -17,8 +17,14 @@ ln -s /vagrant /var/www/html
 
 service httpd start
 
+# enable repositories for php 5.6
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+yum-config-manager --enable remi-php56
+
 # php
-yum install -y php php-cli php-common php-devel php-mysql
+yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 
 # mysql
 yum install -y mysql mysql-server mysql-devel
